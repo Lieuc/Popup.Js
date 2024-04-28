@@ -1,4 +1,8 @@
 const popupContainerStyle = {
+    position: 'absolute',
+    top: '0',
+    zIndex: '9999',
+    backgroundColor: '#fff',
     display: 'flex',
     alignItems: 'center',
     width: 'fit-content',
@@ -6,10 +10,9 @@ const popupContainerStyle = {
     height: 'fit-content',
     boxShadow: '0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05)',
     borderRadius: '10px',
-    margin: 'auto',
+    left: '40%',
+    transform: 'translateX(-50%)',
     padding: '10px',
-    position: 'relative',
-    transform: 'translateY(-100px)',
 }
 
 const popupMessageStyle = {
@@ -28,7 +31,7 @@ const svgStyle = {
     opacity: '0'
 }
 
-const errorSvgCode = `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" xml:space="preserve" width="800px" height="800px" fill="#000000">
+const errorSvgCode = `<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" xml:space="preserve" width="800px" height="800px" fill="#000000">
 
 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
@@ -38,7 +41,7 @@ const errorSvgCode = `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/20
 
 </svg>`
 
-const validSvgCode = `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" xml:space="preserve" width="800px" height="800px" fill="#000000">
+const validSvgCode = `<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" xml:space="preserve" width="800px" height="800px" fill="#000000">
 
 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
@@ -48,7 +51,7 @@ const validSvgCode = `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/20
 
 </svg>`
 
-const warningSvgCode = `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" xml:space="preserve" width="800px" height="800px" fill="#000000">
+const warningSvgCode = `<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" xml:space="preserve" width="800px" height="800px" fill="#000000">
 
 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
@@ -98,7 +101,7 @@ class Popup {
 
         popupContainer.appendChild(svg)
         popupContainer.appendChild(message);
-        document.body.appendChild(popupContainer);
+        window.document.body.appendChild(popupContainer);
 
         this.animateContainerBounceIn(popupContainer, svg, popup);
 
