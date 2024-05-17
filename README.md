@@ -36,39 +36,39 @@ You can display notifications using the following methods:
 #### Default Notification
 
 ```javascript
-popup.message('This is a default message.', 3000);
+popup.message('This is a default message.', 3000, 'top');
 ```
 
 #### Default Notification
 
 ```javascript
-popup.message('This is a default message.', 3000);
+popup.message('This is a default message.', 3000, 'top');
 ```
 
 #### Error Notification
 
 ```javascript
-popup.message('This is a default message.', 3000);
+popup.message('This is a default message.', 3000, 'top');
 ```
 
 #### Warning Notification
 
 ```javascript
-popup.warn('This is a warning message.', 3000);
+popup.warn('This is a warning message.', 3000, 'top');
 ```
 
 #### Custom Notification
 
 ```javascript
 const customSvg = '<svg>...</svg>';
-popup.custom('Custom message with custom SVG.', 3000, customSvg);
+popup.custom('Custom message with custom SVG.', 3000, customSvg, 'top');
 ```
 
 ### Custom Styles
 You can customize the style of notifications by passing an object with CSS properties:
 
 ```javascript
-popup.message('Custom styled message.', 3000, { backgroundColor: 'red', color: 'white' });
+popup.message('Custom styled message.', 3000, 'top', { backgroundColor: 'red', color: 'white' });
 ````
 
 ### Custom SVG Icons
@@ -77,7 +77,7 @@ You can use custom SVG icons for notifications:
 
 ```javascript
 const customSvg = '<svg>...</svg>';
-popup.custom('Custom message with custom SVG.', 3000, customSvg);
+popup.custom('Custom message with custom SVG.', 3000, customSvg, 'top');
 ```
 
 ### Custom SVG Icons and Custom Styles
@@ -86,7 +86,7 @@ You can use custom SVG and Style for notifications:
 
 ```javascript
 const customSvg = '<svg>...</svg>';
-popup.custom('Custom message with custom SVG.', 3000, customSvg, { backgroundColor: 'red', color: 'white' });
+popup.custom('Custom message with custom SVG.', 3000, customSvg, 'top', { backgroundColor: 'red', color: 'white' });
 ```
 
 ## Screenshots
