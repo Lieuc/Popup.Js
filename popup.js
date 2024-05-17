@@ -76,15 +76,24 @@ const warningSvg = createSvg(warningSvgCode);
 
 class Popup {
 
-
+    // Apply style to an element
     applyStyle(element, style) {
         Object.assign(element.style, style);
     }
 
-
-    createPopup(content, duration, svg, containerStyle, messageStyle) {
+    createPopup(content, duration, svg, containerStyle, messageStyle, position = 'top') {
         containerStyle = {...popupContainerStyle, ...containerStyle}
         messageStyle = {...popupMessageStyle, ...messageStyle}
+
+        switch (position) {
+            case 'ltop':
+                containerStyle.left = '10px';
+                break;
+            case 'rtop':
+                containerStyle.left = 'auto';
+                containerStyle.right = '10px';
+                break;
+        }
 
         let popupContainer = document.createElement('div');
         let message = document.createElement('p');
@@ -99,30 +108,33 @@ class Popup {
         popupContainer.appendChild(message);
         window.document.body.appendChild(popupContainer);
 
-        this.animateContainerBounceIn(popupContainer, svg, popup);
+        this.animateContainerBounceIn(popupContainer, svg, this);
 
         setTimeout(() => {
             this.animateContainerBounceOut(popupContainer);
         }, duration);
     }
 
-    message(content, duration, containerStyle, messageStyle) {
-        this.createPopup(content, duration, validSvg, containerStyle, messageStyle);
+
+
+    message(content, duration, containerStyle, messageStyle, position = 'top') {
+        this.createPopup(content, duration, validSvg, containerStyle, messageStyle, position);
     }
 
-    error(content, duration, containerStyle, messageStyle) {
-        this.createPopup(content, duration, errorSvg, containerStyle, messageStyle);
+    error(content, duration, containerStyle, messageStyle, position = 'top') {
+        this.createPopup(content, duration, errorSvg, containerStyle, messageStyle, position);
     }
 
-    warn(content, duration, containerStyle, messageStyle) {
-        this.createPopup(content, duration, warningSvg, containerStyle, messageStyle);
+    warn(content, duration, containerStyle, messageStyle, position = 'top') {
+        this.createPopup(content, duration, warningSvg, containerStyle, messageStyle, position);
     }
 
-    custom(content, duration, svgCode, containerStyle, messageStyle) {
+    custom(content, duration, svgCode, containerStyle, messageStyle, position = 'top') {
         let svg = createSvg(svgCode);
-        this.createPopup(content, duration, svg, containerStyle, messageStyle);
+        this.createPopup(content, duration, svg, containerStyle, messageStyle, position);
     }
 
+    // Animation de rebondissement svg
 
     animateBounceIn(element) {
         let scale = 0.1;
@@ -141,6 +153,8 @@ class Popup {
 
         let animation = requestAnimationFrame(step);
     }
+
+    // Animation de rebondissement du container
 
     animateContainerBounceIn(element, svg, popup) {
         let scale = -100;
@@ -161,6 +175,8 @@ class Popup {
 
 
     }
+
+    // Animation de disparition du container
 
     animateContainerBounceOut(element) {
         let scale = 1;
