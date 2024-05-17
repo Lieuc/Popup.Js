@@ -75,10 +75,7 @@ const warningSvg = createSvg(warningSvgCode);
 
 
 class Popup {
-    constructor(content, duration) {
-        this.content = content;
-        this.duration = duration;
-    }
+
 
     applyStyle(element, style) {
         Object.assign(element.style, style);
@@ -89,7 +86,6 @@ class Popup {
         containerStyle = {...popupContainerStyle, ...containerStyle}
         messageStyle = {...popupMessageStyle, ...messageStyle}
 
-        let popup = new Popup(content, duration);
         let popupContainer = document.createElement('div');
         let message = document.createElement('p');
 
@@ -97,7 +93,7 @@ class Popup {
         this.applyStyle(popupContainer, containerStyle);
         this.applyStyle(message, messageStyle);
 
-        message.textContent = popup.content;
+        message.textContent = content;
 
         popupContainer.appendChild(svg)
         popupContainer.appendChild(message);
@@ -107,7 +103,7 @@ class Popup {
 
         setTimeout(() => {
             this.animateContainerBounceOut(popupContainer);
-        }, popup.duration);
+        }, duration);
     }
 
     message(content, duration, containerStyle, messageStyle) {

@@ -17,8 +17,8 @@ To use this library, you can directly include the JavaScript file in your HTML:
 ```
 
 Alternatively, you can use it via cdn:
-```bash
-// Coming soon ...
+```html
+<script src="https://cdn.crabii.cloud/cdns/popup.js"></script>
 ```
 
 ## Usage
