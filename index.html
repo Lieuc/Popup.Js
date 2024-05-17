@@ -3,6 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Popup.JS - test</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100dvh;
+            margin: 0;
+            gap: 14px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3199e3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2e90ff;
+        }
+    </style>
+
     <!-- import cdn -->
     <script src="popup.js"></script>
     <script>
@@ -15,8 +42,9 @@
 </head>
 <body>
 
-    <button onclick="popup.custom('Hey, this is a cool message !', timeout, svg, 'rtop')">Message</button>
-
+    <button onclick="popup.custom('Hey, this is a cool message !', timeout, svg, 'ltop')">On the left !</button>
+    <button onclick="popup.custom('Hey, this is a cool message !', timeout, svg, 'top')">Test It !</button>
+    <button onclick="popup.custom('Hey, this is a cool message !', timeout, svg, 'rtop')">On the right !</button>
 
 
 </body>
