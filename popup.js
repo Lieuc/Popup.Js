@@ -81,7 +81,7 @@ class Popup {
         Object.assign(element.style, style);
     }
 
-    createPopup(content, duration, svg, containerStyle, messageStyle, position = 'top') {
+    createPopup(content, duration, svg, position = 'top', containerStyle, messageStyle) {
         containerStyle = {...popupContainerStyle, ...containerStyle}
         messageStyle = {...popupMessageStyle, ...messageStyle}
 
@@ -117,21 +117,21 @@ class Popup {
 
 
 
-    message(content, duration, containerStyle, messageStyle, position = 'top') {
-        this.createPopup(content, duration, validSvg, containerStyle, messageStyle, position);
+    message(content, duration, position = 'top', containerStyle, messageStyle) {
+        this.createPopup(content, duration, validSvg, position, containerStyle, messageStyle);
     }
 
-    error(content, duration, containerStyle, messageStyle, position = 'top') {
-        this.createPopup(content, duration, errorSvg, containerStyle, messageStyle, position);
+    error(content, duration, position = 'top', containerStyle, messageStyle) {
+        this.createPopup(content, duration, errorSvg, position, containerStyle, messageStyle);
     }
 
-    warn(content, duration, containerStyle, messageStyle, position = 'top') {
-        this.createPopup(content, duration, warningSvg, containerStyle, messageStyle, position);
+    warn(content, duration, position = 'top', containerStyle, messageStyle) {
+        this.createPopup(content, duration, warningSvg, position, containerStyle, messageStyle);
     }
 
-    custom(content, duration, svgCode, containerStyle, messageStyle, position = 'top') {
+    custom(content, duration, svgCode, position = 'top', containerStyle, messageStyle) {
         let svg = createSvg(svgCode);
-        this.createPopup(content, duration, svg, containerStyle, messageStyle, position);
+        this.createPopup(content, duration, svg, position, containerStyle, messageStyle);
     }
 
     // Animation de rebondissement svg
