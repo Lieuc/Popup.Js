@@ -8,6 +8,8 @@ This is a simple JavaScript library for displaying popup notifications on web pa
 - Customizable styles for notifications.
 - Supports custom SVG icons for notifications.
 
+## [Demo](https://popup.crabii.cloud/)
+
 ## Installation
 
 To use this library, you can directly include the JavaScript file in your HTML:
