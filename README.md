@@ -89,6 +89,11 @@ const customSvg = '<svg>...</svg>';
 popup.custom('Custom message with custom SVG.', 3000, customSvg, 'top', { backgroundColor: 'red', color: 'white' });
 ```
 
+## Positioning
+
+You can specify the position og the notification by using 'ltop', 'top', 'rtop'.
+
+
 ## Screenshots
 
 ![Default Notification](screenshots/img.png)
