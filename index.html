@@ -28,6 +28,14 @@
         button:hover {
             background-color: #2e90ff;
         }
+        h1 {
+            position: absolute;
+            margin: auto;
+            top: 150px;
+            font-size: 4.3em;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
     </style>
 
     <!-- import cdn -->
@@ -41,6 +49,8 @@
     </script>
 </head>
 <body>
+
+    <h1>Popup.JS</h1>
 
     <button onclick="popup.message('Hey, this is a cool message !', timeout, 'ltop')">On the left !</button>
     <button onclick="popup.warn('Hey, this is a cool message !', timeout, 'top')">Test It !</button>
